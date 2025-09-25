@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Природная галерея — портфолио</title>
+  <title>Портфолио — CSS-рисунок</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Шапка -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">Природная галерея</div>
@@ -19,42 +18,82 @@
     </div>
   </header>
 
-  <!-- Герой -->
   <section class="hero">
     <div class="container hero-inner">
       <h1>Волшебный мир природы</h1>
-      <p>Откройте красоту природного мира через искусство чистого CSS —
-        ни одной картинки, всё нарисовано стилями.</p>
+      <p>Рисунок собран только из HTML+CSS. Нижe — блок 300×300 с рамкой, грибами, травой и пчелой.</p>
     </div>
   </section>
 
-  <!-- Галерея (карточка с работой) -->
   <section id="gallery" class="container section">
     <div class="card">
       <h2>Сказочный пейзаж</h2>
 
-      <!-- CSS-картинка 200×200 -->
-      <div class="css-picture" aria-label="Грибочки, пчела и облака"></div>
+      <!-- ===== КАРТИНКА ПО ТВОИМ СТИЛЯМ ===== -->
+      <div class="image">
+        <!-- боковые бордеры с «пупырками» -->
+        <div class="border border-up">
+          <!-- vertical dots -->
+          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div class="border border-left">
+          <!-- top dots -->
+          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div class="border border-down">
+          <!-- vertical dots -->
+          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div class="border border-right">
+          <!-- bottom dots -->
+          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
 
-      <p class="caption">Учебная работа: рисунок создан исключительно средствами CSS (вариант 1).</p>
+        <!-- внутренний холст -->
+        <div class="center">
+          <div class="cloud cloud-1"></div>
+          <div class="cloud cloud-2"></div>
+
+          <!-- трава -->
+          <div class="triangles"></div>
+
+          <!-- грибы -->
+          <div class="mushroom"></div>
+          <div class="mushroom mushroom--tilted"></div>
+
+          <!-- пчела -->
+          <div class="image__butterfly">
+            <div class="wing wing-1"></div>
+            <div class="wing wing-2"></div>
+            <div class="wing wing-3"></div>
+            <div class="wing wing-4"></div>
+
+            <div class="head">
+              <div class="eye"></div>
+              <div class="eye"></div>
+            </div>
+            <div class="body"></div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== /КАРТИНКА ===== -->
+
+      <p class="caption">Если нужен базовый размер 200×200 — поменяй ширину/высоту у <code>.image</code>.</p>
     </div>
   </section>
 
-  <!-- О проекте -->
   <section id="about" class="about">
     <div class="container about-inner">
       <h2>О проекте</h2>
-      <p>
-        Этот небольшой сайт-портфолио демонстрирует основы адаптивной вёрстки:
-        логическую структуру страницы, аккуратную типографику, сетки, карточки
-        и декоративные эффекты без перегруза кодом. Центральный элемент —
-        мини-иллюстрация размером 200×200 пикселей, сверстанная на чистом CSS
-        с использованием градиентов, фигур и псевдоэлементов.
-      </p>
+      <p>Мини-портфолио с CSS-иллюстрацией: рамка с точками, небо, облако,
+         диагональная трава, два гриба и пчела с анимированными крыльями.</p>
     </div>
   </section>
 
-  <!-- Контакты + футер -->
   <footer id="contacts" class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -64,7 +103,6 @@
       <div>
         <h3>Контакты</h3>
         <p>Email: <a href="mailto:info@naturegallery.com">info@naturegallery.com</a></p>
-        <p>Телефон: +7 (555) 123-45-67</p>
       </div>
       <div>
         <h3>Соцсети</h3>
@@ -75,7 +113,7 @@
         </p>
       </div>
     </div>
-    <div class="container rights">© 2025 Природная галерея. Все права защищены.</div>
+    <div class="container rights">© 2025 Природная галерея</div>
   </footer>
 </body>
 </html>
