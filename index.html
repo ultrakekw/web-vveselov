@@ -3,117 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Портфолио — CSS-рисунок</title>
+  <title>Василий Веселов — Frontend-разработчик</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">Природная галерея</div>
-      <nav class="nav">
-        <a href="#gallery">Галерея</a>
-        <a href="#about">О проекте</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
+      <div class="brand">сайт by Веселов В.</div>
     </div>
   </header>
 
   <section class="hero">
     <div class="container hero-inner">
-      <h1>Волшебный мир природы</h1>
-      <p>Рисунок собран только из HTML+CSS. Нижe — блок 200×200 с рамкой, грибами, травой и пчелой.</p>
+      <h1>Василий Веселов</h1>
+      <p>Frontend-разработчик и веб-дизайнер. Создаю современные веб-приложения с акцентом на пользовательский опыт и визуальное восприятие.</p>
     </div>
   </section>
 
-  <section id="gallery" class="container section">
-    <div class="card">
-      <h2>Сказочный пейзаж</h2>
-
-      <!-- ===== КАРТИНКА ПО ТВОИМ СТИЛЯМ ===== -->
-      <div class="image">
-        <!-- боковые бордеры с «пупырками» -->
-        <div class="border border-up">
-          <!-- vertical dots -->
-          <div></div><div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div><div></div>
-        </div>
-        <div class="border border-left">
-          <!-- top dots -->
-          <div></div><div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div><div></div>
-        </div>
-        <div class="border border-down">
-          <!-- vertical dots -->
-          <div></div><div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div><div></div>
-        </div>
-        <div class="border border-right">
-          <!-- bottom dots -->
-          <div></div><div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div><div></div>
-        </div>
-
-        <!-- внутренний холст -->
-        <div class="center">
-          <div class="cloud cloud-1"></div>
-          <div class="cloud cloud-2"></div>
-
-          <!-- трава -->
-          <div class="triangles"></div>
-
-          <!-- грибы -->
-          <div class="mushroom"></div>
-          <div class="mushroom mushroom--tilted"></div>
-
-          <!-- пчела -->
-          <div class="image__butterfly">
-            <div class="wing wing-1"></div>
-            <div class="wing wing-2"></div>
-            <div class="wing wing-3"></div>
-            <div class="wing wing-4"></div>
-
-            <div class="head">
-              <div class="eye"></div>
-              <div class="eye"></div>
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2>Портфолио</h2>
+      <div class="portfolio-grid">
+        
+        <div class="portfolio-item featured">
+          <h3>CSS-иллюстрация "Природный мир"</h3>
+          <!-- ===== КАРТИНКА ПО ТВОИМ СТИЛЯМ ===== -->
+          <div class="image">
+            <!-- боковые бордеры с «пупырками» -->
+            <div class="border border-up">
+              <!-- vertical dots -->
+              <div></div><div></div><div></div><div></div><div></div>
+              <div></div><div></div><div></div><div></div><div></div>
             </div>
-            <div class="body"></div>
+            <div class="border border-left">
+              <!-- top dots -->
+              <div></div><div></div><div></div><div></div><div></div>
+              <div></div><div></div><div></div><div></div><div></div>
+            </div>
+            <div class="border border-down">
+              <!-- vertical dots -->
+              <div></div><div></div><div></div><div></div><div></div>
+              <div></div><div></div><div></div><div></div><div></div>
+            </div>
+            <div class="border border-right">
+              <!-- bottom dots -->
+              <div></div><div></div><div></div><div></div><div></div>
+              <div></div><div></div><div></div><div></div><div></div>
+            </div>
+
+            <!-- внутренний холст -->
+            <div class="center">
+              <div class="cloud cloud-1"></div>
+              <div class="cloud cloud-2"></div>
+
+              <!-- трава -->
+              <div class="triangles"></div>
+
+              <!-- грибы -->
+              <div class="mushroom"></div>
+              <div class="mushroom mushroom--tilted"></div>
+
+              <!-- пчела -->
+              <div class="image__butterfly">
+                <div class="wing wing-1"></div>
+                <div class="wing wing-2"></div>
+                <div class="wing wing-3"></div>
+                <div class="wing wing-4"></div>
+
+                <div class="head">
+                  <div class="eye"></div>
+                  <div class="eye"></div>
+                </div>
+                <div class="body"></div>
+              </div>
+            </div>
+          </div>
+          <!-- ===== /КАРТИНКА ===== -->
+          <p class="project-description">Полностью создано на HTML и CSS без использования изображений. Демонстрирует навыки работы с CSS-анимацией, градиентами и позиционированием.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Animation</span>
           </div>
         </div>
-      </div>
-      <!-- ===== /КАРТИНКА ===== -->
 
-      <p class="caption">Картинка теперь имеет размер 200×200 пикселей с правильно выровненными объектами.</p>
+        <div class="portfolio-item">
+          <div class="project-placeholder">🌐</div>
+          <h3>Интернет-магазин</h3>
+          <p>Адаптивный интернет-магазин с корзиной товаров и интеграцией платежной системы.</p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Redux</span>
+            <span class="tag">API</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="project-placeholder">📱</div>
+          <h3>Мобильное приложение</h3>
+          <p>PWA приложение для управления задачами с оффлайн режимом.</p>
+          <div class="project-tags">
+            <span class="tag">Vue.js</span>
+            <span class="tag">PWA</span>
+            <span class="tag">LocalStorage</span>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="project-placeholder">🎨</div>
+          <h3>Дизайн-система</h3>
+          <p>Библиотека UI компонентов для корпоративного использования.</p>
+          <div class="project-tags">
+            <span class="tag">Storybook</span>
+            <span class="tag">SCSS</span>
+            <span class="tag">Components</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <section id="about" class="about">
     <div class="container about-inner">
-      <h2>О проекте</h2>
-      <p>Мини-портфолио с CSS-иллюстрацией: рамка с точками, небо, облако,
-         диагональная трава, два гриба и пчела с анимированными крыльями.</p>
+      <h2>Обо мне</h2>
+      <div class="about-content">
+        <div class="about-photo">
+          <div class="photo-placeholder">📸</div>
+        </div>
+        <div class="about-text">
+          <p>Привет! Я Василий Веселов, frontend-разработчик с опытом создания современных веб-интерфейсов.</p>
+          <p>Специализируюсь на HTML, CSS, JavaScript и современных фреймворках. 
+             Увлекаюсь созданием интерактивных элементов и анимаций, которые делают пользовательский опыт незабываемым.</p>
+          <ul>
+            <li>🎓 Образование: Политехнический университет</li>
+            <li>💼 Опыт: 2+ года в веб-разработке</li>
+            <li>🚀 Специализация: Frontend, UI/UX</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2>Технические навыки</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Vue.js</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Инструменты</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Webpack</span>
+            <span class="skill-tag">Sass</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">VS Code</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Дополнительно</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">API</span>
+            <span class="skill-tag">Responsive</span>
+            <span class="skill-tag">Animation</span>
+            <span class="skill-tag">Performance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>Готовы к сотрудничеству?</h2>
+      <p>Давайте обсудим ваш проект и создадим что-то потрясающее вместе!</p>
+      <div class="cta-buttons">
+        <span class="btn btn-primary">Связаться со мной</span>
+        <span class="btn btn-secondary">Написать письмо</span>
+      </div>
     </div>
   </section>
 
   <footer id="contacts" class="site-footer">
     <div class="container footer-grid">
       <div>
-        <h3>Природная галерея</h3>
-        <p>Искусство CSS в каждом пикселе.</p>
+        <h3>Василий Веселов</h3>
+        <p>Frontend-разработчик и веб-дизайнер</p>
       </div>
       <div>
         <h3>Контакты</h3>
-        <p>Email: <a href="msaidfijwfiew">info@выфасвыфаыв.com</a></p>
+        <p>Email: vasiliy.veselov@example.com</p>
+        <p>Телефон: +7 (900) 123-45-67</p>
       </div>
       <div>
-        <h3>Соцсети</h3>
+        <h3>Социальные сети</h3>
         <p class="chips">
-          <a href="#" class="chip">FB</a>
-          <a href="#" class="chip">IG</a>
-          <a href="#" class="chip">TW</a>
+          <span class="chip">GitHub</span>
+          <span class="chip">LinkedIn</span>
+          <span class="chip">Telegram</span>
         </p>
       </div>
     </div>
-    <div class="container rights">© 2025 Природная галерея</div>
+    <div class="container rights">© 2025 Василий Веселов. Все права защищены.</div>
   </footer>
 </body>
 </html>
