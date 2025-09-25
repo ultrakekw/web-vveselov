@@ -1,5 +1,5 @@
 /* ===== ОФОРМЛЕНИЕ СТРАНИЦЫ (минимум) ===== */
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(160deg,#6f6adf,#4a60d0);color:#161821}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0066ff;color:#161821}
 .container{width:min(1100px,92vw);margin:0 auto}
 .site-header{background:rgba(255,255,255,.75);backdrop-filter:blur(8px)}
 .header-inner{display:flex;justify-content:space-between;align-items:center;padding:12px 6px}
@@ -78,7 +78,7 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-ser
     background: #d3caca;
     border-radius: 100%;
     box-sizing: border-box;
-    border: #671616 solid 5px;
+    border: #671616 solid 3px;
 }
 .image .mushroom::after {
     content: '';
@@ -87,13 +87,13 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-ser
     width: 340%;
     translate: -35% -50%;
     background: radial-gradient(circle at 65% 25%, #fafbfe 0%, #671616 70%);
-    border-radius: 60px 60px 0 0;
+    border-radius: 40px 40px 0 0;
 }
 .image .mushroom--tilted {
     rotate: 30deg;
     scale: 0.7;
-    left: 10em;
-    top: 135px;
+    left: 65%;
+    top: 55%;
 }
 
 /* облако/небо */
@@ -113,46 +113,47 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-ser
 /* пчела */
 .image__butterfly {
     position: absolute;
-    left: 180px;
-    top: 70px;
+    left: 65%;
+    top: 25%;
     rotate: 45deg;
+    scale: 0.8;
 }
 .image__butterfly .head {
-    width: 20px;
-    height: 17px;
-    margin: -10px 0;
+    width: 16px;
+    height: 14px;
+    margin: -8px 0;
     background: #d9bb2f;
     border-radius: 100%;
     border: #c2ac39 solid;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding-bottom: 3px;
-    gap: 2px;
+    padding-bottom: 2px;
+    gap: 1px;
 }
 .image__butterfly .eye {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background: #000;
     border-radius: 100%;
 }
 .image__butterfly .body {
-    width: 20px;
-    height: 60px;
+    width: 16px;
+    height: 48px;
     background: #d9bb2f;
     border-radius: 100%;
     border: #c2ac39 solid;
 }
 .image__butterfly .wing {
     position: absolute;
-    width: 40px;
-    height: 16px;
+    width: 32px;
+    height: 12px;
     background: #6b85f5;
     border: #334fc8 solid;
     border-radius: 100%;
     z-index: -1;
-    top: 20px;
-    --offset: 15px;
+    top: 16px;
+    --offset: 12px;
     animation: 1.5s ease-in-out 0s infinite alternate running flap;
     opacity:.85;
 }
