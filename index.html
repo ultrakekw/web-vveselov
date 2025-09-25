@@ -1,50 +1,93 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Портфолио</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Портфолио — CSS-рисунок</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Моё портфолио</h1>
-    <nav>
-      <a href="#about">Обо мне</a>
-      <a href="#works">Работы</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Природная галерея</div>
+      <nav class="nav">
+        <a href="#gallery">Галерея</a>
+        <a href="#about">О проекте</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>Обо мне</h2>
-      <p>Это мой учебный сайт-портфолио. Здесь вы найдёте примеры моих работ по веб-разработке.</p>
-    </section>
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Волшебный мир природы</h1>
+      <p>Рисунок 200×200 выполнен только средствами CSS (вариант 1).</p>
+    </div>
+  </section>
 
-    <section id="works">
-      <h2>Работы</h2>
-      <p>Ниже — рисунок, выполненный с помощью CSS (вариант 1).</p>
-      <div class="pic"> <!-- Сам рисунок -->
+  <section id="gallery" class="container section">
+    <div class="card">
+      <h2>Сказочный пейзаж</h2>
+
+      <!-- CSS-рисунок -->
+      <div class="art-200">
         <div class="sky"></div>
+        <div class="glow"></div>
+        <div class="cloud"></div>
+
+        <!-- трава -->
         <div class="grass"></div>
-        <div class="mushroom mushroom1"></div>
-        <div class="mushroom mushroom2"></div>
+
+        <!-- грибы -->
+        <div class="stem big"></div>
+        <div class="cap big"></div>
+        <div class="stem small"></div>
+        <div class="cap small"></div>
+
+        <!-- пчела -->
         <div class="bee">
-          <div class="bee-body"></div>
-          <div class="bee-wing wing1"></div>
-          <div class="bee-wing wing2"></div>
+          <div class="body"></div>
+          <div class="eye e1"></div>
+          <div class="eye e2"></div>
+          <div class="wing w1"></div>
+          <div class="wing w2"></div>
+          <div class="wing w3"></div>
+          <div class="wing w4"></div>
+          <div class="stinger"></div>
         </div>
       </div>
-    </section>
 
-    <section id="contacts">
-      <h2>Контакты</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-    </section>
-  </main>
+      <p class="caption">Максимально похоже на исходный вариант: рамка, небо, грибы, трава, пчела.</p>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 · Учебный сайт-портфолио</p>
+  <section id="about" class="about">
+    <div class="container about-inner">
+      <h2>О проекте</h2>
+      <p>Демонстрация декоративной графики, выполненной исключительно на CSS без изображений.</p>
+    </div>
+  </section>
+
+  <footer id="contacts" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Природная галерея</h3>
+        <p>Искусство CSS в каждом пикселе.</p>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <p>Email: <a href="mailto:info@naturegallery.com">info@naturegallery.com</a></p>
+      </div>
+      <div>
+        <h3>Соцсети</h3>
+        <p class="chips">
+          <a href="#" class="chip">FB</a>
+          <a href="#" class="chip">IG</a>
+          <a href="#" class="chip">TW</a>
+        </p>
+      </div>
+    </div>
+    <div class="container rights">© 2025 Природная галерея</div>
   </footer>
 </body>
 </html>
