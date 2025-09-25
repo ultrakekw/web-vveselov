@@ -1,0 +1,78 @@
+/* Базовые стили без сторонних библиотек */
+:root {
+  --bg: #0b1020;
+  --card: #111833;
+  --text: #eaf0ff;
+  --muted: #a6b0d8;
+  --accent: #6ea8fe;
+  --border: rgba(255,255,255,.08);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  background: linear-gradient(180deg, var(--bg), #0f1a3a);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+header {
+  background: radial-gradient(80% 120% at 0% 0%, rgba(110,168,254,.15), transparent), var(--card);
+  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.lead { color: var(--muted); margin: 0.25rem 0 0.75rem; }
+
+.nav {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  padding: .25rem 0 .5rem;
+}
+.nav a {
+  color: var(--accent);
+  text-decoration: none;
+  padding: .35rem .7rem;
+  border: 1px solid rgba(110,168,254,.35);
+  border-radius: 999px;
+}
+.nav a:hover { background: rgba(110,168,254,.12); }
+
+.card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  backdrop-filter: blur(4px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.footer { color: var(--muted); text-align: center; }
