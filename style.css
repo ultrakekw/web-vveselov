@@ -1,77 +1,97 @@
-:root {
-  --bg: #0b1020;
-  --card: #111833;
-  --text: #eaf0ff;
-  --muted: #a6b0d8;
-  --accent: #6ea8fe;
-  --border: rgba(255,255,255,.08);
-}
-
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+/* Общий стиль */
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
-  background: linear-gradient(180deg, var(--bg), #0f1a3a);
-  color: var(--text);
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f0f0f5;
+  color: #222;
 }
-
-.container {
-  width: min(980px, 92vw);
-  margin: 0 auto;
-  padding: 1.25rem;
-}
-
 header {
-  background: radial-gradient(80% 120% at 0% 0%, rgba(110,168,254,.15), transparent), var(--card);
-  border-bottom: 1px solid var(--border);
-  border-top: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 1;
+  background: #333;
+  color: white;
+  padding: 1em;
+  text-align: center;
 }
-
-h1, h2, h3 {
-  line-height: 1.2;
-  margin: 0.25rem 0 0.5rem;
-}
-
-.lead { color: var(--muted); margin: 0.25rem 0 0.75rem; }
-
-.nav {
-  display: flex;
-  gap: .6rem;
-  flex-wrap: wrap;
-  padding: .25rem 0 .5rem;
-}
-.nav a {
-  color: var(--accent);
+header nav a {
+  color: #ddd;
+  margin: 0 10px;
   text-decoration: none;
-  padding: .35rem .7rem;
-  border: 1px solid rgba(110,168,254,.35);
-  border-radius: 999px;
 }
-.nav a:hover { background: rgba(110,168,254,.12); }
-
-.card {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1rem 1.25rem;
-  margin: 1rem 0;
-  backdrop-filter: blur(4px);
+header nav a:hover {
+  color: white;
+}
+main { padding: 1em 2em; }
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: .5em;
+  margin-top: 1em;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-@media (max-width: 900px) {
-  .grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 640px) {
-  .grid { grid-template-columns: 1fr; }
+/* === CSS-картинка 200x200 === */
+.pic {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 1em auto;
+  background: linear-gradient(#87cefa, #4682b4); /* небо */
+  border: 5px solid #ffa500;
+  overflow: hidden;
 }
 
-.footer { color: var(--muted); text-align: center; }
+/* трава */
+.grass {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #228b22,
+    #228b22 10px,
+    #32cd32 10px,
+    #32cd32 20px
+  );
+}
+
+/* грибы */
+.mushroom {
+  position: absolute;
+  bottom: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50% 50% 40% 40%;
+  background: sienna;
+}
+.mushroom1 {
+  left: 30px;
+  background: radial-gradient(circle at top, #d2b48c, sienna);
+}
+.mushroom2 {
+  left: 90px;
+  background: radial-gradient(circle at top, #deb887, saddlebrown);
+}
+
+/* пчела */
+.bee {
+  position: absolute;
+  top: 60px;
+  left: 120px;
+}
+.bee-body {
+  width: 40px;
+  height: 20px;
+  background: yellow;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+.bee-wing {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: lightblue;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.wing1 { top: -10px; left: -5px; }
+.wing2 { top: -10px; left: 20px; }
