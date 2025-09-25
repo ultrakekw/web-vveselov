@@ -1,119 +1,119 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Природная картина - Адаптивная верстка</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Портфолио — CSS-рисунок</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="container">
-                <h1 class="logo">Природная галерея</h1>
-                <ul class="nav-menu">
-                    <li><a href="#gallery">Галерея</a></li>
-                    <li><a href="#about">О нас</a></li>
-                    <li><a href="#contact">Контакты</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Природная галерея</div>
+      <nav class="nav">
+        <a href="#gallery">Галерея</a>
+        <a href="#about">О проекте</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
 
-    <main class="main">
-        <section class="hero" id="gallery">
-            <div class="container">
-                <h2 class="hero-title">Волшебный мир природы</h2>
-                <p class="hero-description">Откройте для себя удивительную красоту природного мира через наше искусство CSS
-                </p>
-            </div>
-        </section>
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Волшебный мир природы</h1>
+      <p>Рисунок собран только из HTML+CSS. Нижe — блок 300×300 с рамкой, грибами, травой и пчелой.</p>
+    </div>
+  </section>
 
-        <section class="image-container">
-            <div class="container">
-                <article class="artwork">
-                    <h3 class="artwork-title">Сказочный пейзаж</h3>
-                    <div class="image" role="img"
-                        aria-label="Сказочная природная картина с грибами, бабочкой и облаками">
-                        <div class="border border-up" aria-hidden="true">
-                            <div></div><div></div><div></div><div></div><div></div>
-                        </div>
+  <section id="gallery" class="container section">
+    <div class="card">
+      <h2>Сказочный пейзаж</h2>
 
-                        <div class="border border-left" aria-hidden="true">
-                            <div></div><div></div><div></div><div></div><div></div>
-                        </div>
-
-                        <div class="border border-down" aria-hidden="true">
-                            <div></div><div></div><div></div><div></div><div></div>
-                        </div>
-
-                        <div class="border border-right" aria-hidden="true">
-                            <div></div><div></div><div></div><div></div><div></div>
-                        </div>
-
-                        <div class="center">
-                            <div class="cloud cloud-1" aria-label="Облако"></div>
-                            <div class="cloud cloud-2" aria-label="Облако"></div>
-                            <div class="mushroom" aria-label="Гриб"></div>
-                            <div class="mushroom mushroom--tilted" aria-label="Наклоненный гриб"></div>
-                            <div class="image__butterfly" aria-label="Бабочка">
-                                <div class="wing wing-1"></div>
-                                <div class="wing wing-2"></div>
-                                <div class="wing wing-3"></div>
-                                <div class="wing wing-4"></div>
-                                <div class="body"></div>
-                                <div class="head">
-                                    <div class="eye"></div>
-                                    <div class="eye"></div>
-                                </div>
-                            </div>
-                            <div class="triangles" aria-hidden="true"></div>
-                        </div>
-                    </div>
-                    <p class="artwork-description">
-                        Моя профессиональная работа
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <section class="about" id="about">
-            <div class="container">
-                <h2>О проекте</h2>
-                <p>Этот проект демонстрирует возможности современного CSS для создания сложных изображений и анимаций
-                    без использования графических файлов.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Природная галерея</h3>
-                    <p>Искусство CSS в каждом пикселе</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Контакты</h4>
-                    <p>Email: info@naturegallery.com</p>
-                    <p>Телефон: +7 (555) 123-45-67</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Социальные сети</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">FB</a>
-                        <a href="#" aria-label="Instagram">IG</a>
-                        <a href="#" aria-label="Twitter">TW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Природная галерея. Все права защищены.</p>
-            </div>
+      <!-- ===== КАРТИНКА ПО ТВОИМ СТИЛЯМ ===== -->
+      <div class="image">
+        <!-- боковые бордеры с «пупырками» -->
+        <div class="border border-up">
+          <!-- vertical dots -->
+          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div>
         </div>
-    </footer>
-</body>
+        <div class="border border-left">
+          <!-- top dots -->
+          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div class="border border-down">
+          <!-- vertical dots -->
+          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div class="border border-right">
+          <!-- bottom dots -->
+          <div></div><div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div><div></div>
+        </div>
 
+        <!-- внутренний холст -->
+        <div class="center">
+          <div class="cloud cloud-1"></div>
+          <div class="cloud cloud-2"></div>
+
+          <!-- трава -->
+          <div class="triangles"></div>
+
+          <!-- грибы -->
+          <div class="mushroom"></div>
+          <div class="mushroom mushroom--tilted"></div>
+
+          <!-- пчела -->
+          <div class="image__butterfly">
+            <div class="wing wing-1"></div>
+            <div class="wing wing-2"></div>
+            <div class="wing wing-3"></div>
+            <div class="wing wing-4"></div>
+
+            <div class="head">
+              <div class="eye"></div>
+              <div class="eye"></div>
+            </div>
+            <div class="body"></div>
+          </div>
+        </div>
+      </div>
+      <!-- ===== /КАРТИНКА ===== -->
+
+      <p class="caption">Если нужен базовый размер 200×200 — поменяй ширину/высоту у <code>.image</code>.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container about-inner">
+      <h2>О проекте</h2>
+      <p>Мини-портфолио с CSS-иллюстрацией: рамка с точками, небо, облако,
+         диагональная трава, два гриба и пчела с анимированными крыльями.</p>
+    </div>
+  </section>
+
+  <footer id="contacts" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Природная галерея</h3>
+        <p>Искусство CSS в каждом пикселе.</p>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <p>Email: <a href="mailto:info@naturegallery.com">info@naturegallery.com</a></p>
+      </div>
+      <div>
+        <h3>Соцсети</h3>
+        <p class="chips">
+          <a href="#" class="chip">FB</a>
+          <a href="#" class="chip">IG</a>
+          <a href="#" class="chip">TW</a>
+        </p>
+      </div>
+    </div>
+    <div class="container rights">© 2025 Природная галерея</div>
+  </footer>
+</body>
 </html>
