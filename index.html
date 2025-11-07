@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veselov ML School — Курсы по машинному обучению</title>
+  <meta name="description" content="Veselov ML School — практические курсы по машинному обучению, DS и МLOps." />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#/home" class="brand" aria-label="Veselov ML School — на главную">
+        <span class="logo" aria-hidden="true"></span>
+        <span class="brand-text"><strong>Veselov</strong> ML School</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Меню">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" role="navigation" aria-label="Основное меню">
+        <ul>
+          <li><a href="#/home" data-link>Главная</a></li>
+          <li><a href="#/courses" data-link>Курсы</a></li>
+          <li><a href="#/assignments" data-link>Задания</a></li>
+          <li><a href="#/coursework" data-link>Курсовая</a></li>
+          <li><a href="#/about" data-link>О школе</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="site-main container">
+
+    <!-- HOME -->
+    <section id="home" class="route" data-route="/home" aria-labelledby="home-title">
+      <section class="hero">
+        <div class="hero__content">
+          <h1 id="home-title">Veselov ML School — практическое машинное обучение</h1>
+          <p class="lead">
+            Мы помогаем инженерам и аналитикам уверенно строить ML-решения — от идеи и чистого датасета до деплоя и мониторинга.
+          </p>
+          <div class="hero__cta">
+            <a class="btn" href="#/courses">Выбрать курс</a>
+            <a class="btn btn--ghost" href="#/assignments">Посмотреть задания</a>
+          </div>
+        </div>
+        <figure class="hero__media">
+          <img src="practic.png" alt="Рабочее место дата-сайентиста: ноутбук и код на экране">
+          <figcaption>Практика важнее теории: каждую тему закрепляем мини-проектом.</figcaption>
+        </figure>
+      </section>
+
+      <section class="text-grid">
+        <article class="card">
+          <h2>Зачем вам ML уже сегодня</h2>
+          <p>
+            Машинное обучение — это способ систематически извлекать ценность из данных. Бизнесы полагаются на прогнозирование спроса,
+            рекомендации, раннее обнаружение аномалий и персонализацию. Наша школа учит создавать такие модели, а не только
+            повторять шаблоны: вы разберётесь, как формулировать задачу, подбирать метрики качества и интерпретировать результат —
+            без магии и с ясной инженерной логикой.dhsfbhlsdbflvhdsbfvhldsbvhlsbgvhdgsbsvglhfdsv
+            ewqewfqewrfqewfrfqrwfrfadsfdasgfdsgfgsdfgfdsgsfd
+            gsfdgsfdgfdsgfdsgfdsgfdgsfgsdfg
+            Машинное обучение — это способ систематически извлекать ценность из данных. Бизнесы полагаются на прогнозирование спроса,
+            рекомендации, раннее обнаружение аномалий и персонализацию. Наша школа учит создавать такие модели, а не только
+            повторять шаблоны: вы разберётесь, как формулировать задачу, подбирать метрики качества и интерпретировать результат —
+            без магии и с ясной инженерной логикой.dhsfbhlsdbflvhdsbfvhldsbvhlsbgvhdgsbsvglhfdsv
+            ewqewfqewrfqewfrfqrwfrfadsfdasgfdsgfgsdfgfdsgsfd
+            gsfdgsfdgfdsgfdsgfdsgfdgsfgsdfg
+            Машинное обучение — это способ систематически извлекать ценность из данных. Бизнесы полагаются на прогнозирование спроса,
+            рекомендации, раннее обнаружение аномалий и персонализацию. Наша школа учит создавать такие модели, а не только
+            повторять шаблоны: вы разберётесь, как формулировать задачу, подбирать метрики качества и интерпретировать результат —
+            без магии и с ясной инженерной логикой.dhsfbhlsdbflvhdsbfvhldsbvhlsbgvhdgsbsvglhfdsv
+            ewqewfqewrfqewfrfqrwfrfadsfdasgfdsgfgsdfgfdsgsfd
+            gsfdgsfdgfdsgfdsgfdsgfdgsfgsdfg
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Программа с упором на практику</h2>
+          <p>
+            Каждый модуль завершает мини-проект: регрессия, классификация, NLP, табличные данные, компьютерное зрение,
+            продвинутая работа с признаками, кросс-валидация, калибровка вероятностей, MLOps и мониторинг. Материалы построены
+            так, чтобы вы могли повторно использовать заготовки в реальной работе: пайплайны, трекинг экспериментов,
+            версионирование датасетов и моделей.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Инструменты индустрии</h2>
+          <p>
+            Мы используем популярные стек-инструменты: Python, Jupyter, scikit-learn, CatBoost, XGBoost, PyTorch, LightGBM,
+            MLflow, Docker, и простые CI/CD практики. Вы научитесь выбирать модели по бизнес-ограничениям, считать экономический
+            эффект, подбирать метрики (ROC-AUC, PR-AUC, F1, MAPE, RMSE) и объяснять решения стейкхолдерам на понятном языке.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Сообщество и ревью кода</h2>
+          <p>
+            Важнейшая часть обучения — обратная связь. Мы проводим разборы решений, показываем альтернативные подходы и
+            даём рекомендации по качеству и скорости. Вы узнаете, как писать чистый и воспроизводимый код, оформлять эксперименты,
+            фиксировать гипотезы и не теряться в десятках вариантов. На демо-сессиях вы защищаете проекты — как в реальном
+            продукте.
+          </p>
+        </article>
+      </section>
+
+      <section class="media-grid" aria-label="Галерея">
+        <figure class="media-card">
+          <img src="хавка.png" alt="Схемы нейросетей и графики на доске">
+          <figcaption>Интуиция моделей и визуализация решений.</figcaption>
+        </figure>
+        <figure class="media-card">
+          <img src="laptop.png" alt="Серверы и стойки — инфраструктура MLOps">
+          <figcaption>От ноутбука к продакшену: основы MLOps.</figcaption>
+        </figure>
+        <figure class="media-card">
+          <img src="diag.png" alt="Диаграммы и отчёты на экране">
+          <figcaption>Репорты, метрики и мониторинг качества.</figcaption>
+        </figure>
+        <figure class="media-card">
+          <img src="last.png" alt="Командная работа над проектом">
+          <figcaption>Командные проекты и код-ревью.</figcaption>
+        </figure>
+      </section>
+
+      <aside class="highlight">
+        <p><strong>Ближайший набор:</strong> старт через 2 недели. Доступны вечерние и выходные группы. Вопросы — пишите нам ниже.</p>
+      </aside>
+    </section>
+
+    <!-- COURSES -->
+    <section id="courses" class="route" data-route="/courses" aria-labelledby="courses-title" hidden>
+      <h2 id="courses-title">Курсы</h2>
+      <div class="cards-grid">
+        <article class="course card">
+          <img src="red_keyboard.png" alt="Графики и ноутбук — табличные данные">
+          <h3>ML для табличных данных</h3>
+          <p>Фичи, кросс-валидация, регуляризация, деревья решений, бустинг, интерпретация моделей.</p>
+        </article>
+        <article class="course card">
+          <img src="laptop2.png" alt="Текст и токены — обработка естественного языка">
+          <h3>Практический NLP</h3>
+          <p>Классика, эмбеддинги, трансформеры, дообучение, оценка качества и продакшен-сервинг.</p>
+        </article>
+        <article class="course card">
+          <img src="ai.png" alt="Облачная инфраструктура">
+          <h3>MLOps основы</h3>
+          <p>MLflow, контейнеризация, развертывание, мониторинг дрейфа, алертинг и воспроизводимость.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ASSIGNMENTS -->
+    <section id="assignments" class="route" data-route="/assignments" aria-labelledby="assignments-title" hidden>
+      <h2 id="assignments-title">Задания</h2>
+      <ol class="assignments">
+        <li class="card">
+          <h3>Классификация клиентов</h3>
+          <p>Сформируйте пайплайн с обработкой пропусков, масштабированием и логистической регрессией. В отчёте объясните выбор метрики и интерпретацию коэффициентов.</p>
+        </li>
+        <li class="card">
+          <h3>Градиентный бустинг</h3>
+          <p>Сравните CatBoost и XGBoost на кросс-валидации. Подберите гиперпараметры, оцените важности признаков и устойчивость к шуму.</p>
+        </li>
+        <li class="card">
+          <h3>NLP: классификация текстов</h3>
+          <p>Соберите базовый пайплайн (tf-idf + линейная модель) и сравните с эмбеддингами. Подготовьте короткий обзор ошибок.</p>
+        </li>
+        <li class="card">
+          <h3>MLOps мини-проект</h3>
+          <p>Заверните модель в сервис, настройте трекинг экспериментов и мониторинг метрик. Опишите риски и план катастрофического отката.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- COURSEWORK -->
+    <section id="coursework" class="route" data-route="/coursework" aria-labelledby="coursework-title" hidden>
+      <h2 id="coursework-title">Курсовая работа</h2>
+      <p class="muted">На этой странице будут размещаться материалы курсового проекта: постановка задачи, EDA, прототип, метрики, экономический эффект, деплой и мониторинг.</p>
+      <div class="card">
+        <h3>Шаблон структуры</h3>
+        <ul class="checklist">
+          <li>Бизнес-формулировка и метрики успеха</li>
+          <li>Данные и EDA (качество, утечки, сплит)</li>
+          <li>Бейзлайн и итоговая модель</li>
+          <li>Валидация, стресс-тесты, интерпретация</li>
+          <li>Стек деплоя и мониторинг</li>
+          <li>Риски, стоимость, ROI</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="route" data-route="/about" aria-labelledby="about-title" hidden>
+      <h2 id="about-title">О школе Veselov ML School</h2>
+      <p>
+        Школа названа в честь автора курса — <strong>Veselov</strong>. Мы делаем ставку на системное мышление и инженерные
+        практики: чистая репликация экспериментов, строгая валидация и ориентация на продуктовый эффект. Присоединяйтесь,
+        если хотите прокачать практические навыки и портфолио.
+      </p>
+      <div class="contact card">
+        <h3>Связаться</h3>
+        <p>Email: <a href="mailto:hello@veselov-ml.school">hello@veselov-ml.school</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Veselov ML School. Все права защищены.</small>
+      <nav aria-label="Быстрые ссылки">
+        <a href="#/home">Главная</a>
+        <a href="#/courses">Курсы</a>
+        <a href="#/assignments">Задания</a>
+        <a href="#/coursework">Курсовая</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
