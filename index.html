@@ -1,220 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Василий Веселов — Frontend-разработчик</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Veselov ML School — Курсы по машинному обучению</title>
+  <meta name="description" content="Veselov ML School — практические курсы по машинному обучению, DS и МLOps." />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">сайт by Веселов В.</div>
+      <a href="#/home" class="brand" aria-label="Veselov ML School — на главную">
+        <span class="logo" aria-hidden="true"></span>
+        <span class="brand-text"><strong>Veselov</strong> ML School</span>
+      </a>
+
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Меню">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" role="navigation" aria-label="Основное меню">
+        <ul>
+          <li><a href="#/home" data-link>Главная</a></li>
+          <li><a href="#/courses" data-link>Курсы</a></li>
+          <li><a href="#/assignments" data-link>Задания</a></li>
+          <li><a href="#/coursework" data-link>Курсовая</a></li>
+          <li><a href="#/about" data-link>О школе</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero-inner">
-      <h1>Василий Веселов</h1>
-      <p>Frontend-разработчик и веб-дизайнер. Создаю современные веб-приложения с акцентом на пользовательский опыт и визуальное восприятие.</p>
+  <!-- Main -->
+  <main class="site-main container">
+
+    <!-- HOME -->
+    <section id="home" class="route" data-route="/home" aria-labelledby="home-title">
+      <section class="hero">
+        <div class="hero__content">
+          <h1 id="home-title">Veselov ML School — практическое машинное обучение</h1>
+          <p class="lead">
+            Мы помогаем инженерам и аналитикам уверенно строить ML-решения — от идеи и чистого датасета до деплоя и мониторинга.
+          </p>
+          <div class="hero__cta">
+            <a class="btn" href="#/courses">Выбрать курс</a>
+            <a class="btn btn--ghost" href="#/assignments">Посмотреть задания</a>
+          </div>
+        </div>
+        <figure class="hero__media">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&auto=format&fit=crop&q=60" alt="Рабочее место дата-сайентиста: ноутбук и код на экране">
+          <figcaption>Практика важнее теории: каждую тему закрепляем мини-проектом.</figcaption>
+        </figure>
+      </section>
+
+      <section class="text-grid">
+        <article class="card">
+          <h2>Зачем вам ML уже сегодня</h2>
+          <p>
+            Машинное обучение — это способ систематически извлекать ценность из данных. Бизнесы полагаются на прогнозирование спроса,
+            рекомендации, раннее обнаружение аномалий и персонализацию. Наша школа учит создавать такие модели, а не только
+            повторять шаблоны: вы разберётесь, как формулировать задачу, подбирать метрики качества и интерпретировать результат —
+            без магии и с ясной инженерной логикой.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Программа с упором на практику</h2>
+          <p>
+            Каждый модуль завершает мини-проект: регрессия, классификация, NLP, табличные данные, компьютерное зрение,
+            продвинутая работа с признаками, кросс-валидация, калибровка вероятностей, MLOps и мониторинг. Материалы построены
+            так, чтобы вы могли повторно использовать заготовки в реальной работе: пайплайны, трекинг экспериментов,
+            версионирование датасетов и моделей.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Инструменты индустрии</h2>
+          <p>
+            Мы используем популярные стек-инструменты: Python, Jupyter, scikit-learn, CatBoost, XGBoost, PyTorch, LightGBM,
+            MLflow, Docker, и простые CI/CD практики. Вы научитесь выбирать модели по бизнес-ограничениям, считать экономический
+            эффект, подбирать метрики (ROC-AUC, PR-AUC, F1, MAPE, RMSE) и объяснять решения стейкхолдерам на понятном языке.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Сообщество и ревью кода</h2>
+          <p>
+            Важнейшая часть обучения — обратная связь. Мы проводим разборы решений, показываем альтернативные подходы и
+            даём рекомендации по качеству и скорости. Вы узнаете, как писать чистый и воспроизводимый код, оформлять эксперименты,
+            фиксировать гипотезы и не теряться в десятках вариантов. На демо-сессиях вы защищаете проекты — как в реальном
+            продукте.
+          </p>
+        </article>
+      </section>
+
+      <section class="media-grid" aria-label="Галерея">
+        <figure class="media-card">
+          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1200&auto=format&fit=crop&q=60" alt="Схемы нейросетей и графики на доске">
+          <figcaption>Интуиция моделей и визуализация решений.</figcaption>
+        </figure>
+        <figure class="media-card">
+          <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981d?w=1200&auto=format&fit=crop&q=60" alt="Серверы и стойки — инфраструктура MLOps">
+          <figcaption>От ноутбука к продакшену: основы MLOps.</figcaption>
+        </figure>
+        <figure class="media-card">
+          <img src="https://images.unsplash.com/photo-1552288092-76b1c7d2be16?w=1200&auto=format&fit=crop&q=60" alt="Диаграммы и отчёты на экране">
+          <figcaption>Репорты, метрики и мониторинг качества.</figcaption>
+        </figure>
+        <figure class="media-card">
+          <img src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=1200&auto=format&fit=crop&q=60" alt="Командная работа над проектом">
+          <figcaption>Командные проекты и код-ревью.</figcaption>
+        </figure>
+      </section>
+
+      <aside class="highlight">
+        <p><strong>Ближайший набор:</strong> старт через 2 недели. Доступны вечерние и выходные группы. Вопросы — пишите нам ниже.</p>
+      </aside>
+    </section>
+
+    <!-- COURSES -->
+    <section id="courses" class="route" data-route="/courses" aria-labelledby="courses-title" hidden>
+      <h2 id="courses-title">Курсы</h2>
+      <div class="cards-grid">
+        <article class="course card">
+          <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?w=1200&auto=format&fit=crop&q=60" alt="Графики и ноутбук — табличные данные">
+          <h3>ML для табличных данных</h3>
+          <p>Фичи, кросс-валидация, регуляризация, деревья решений, бустинг, интерпретация моделей.</p>
+        </article>
+        <article class="course card">
+          <img src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=1200&auto=format&fit=crop&q=60" alt="Текст и токены — обработка естественного языка">
+          <h3>Практический NLP</h3>
+          <p>Классика, эмбеддинги, трансформеры, дообучение, оценка качества и продакшен-сервинг.</p>
+        </article>
+        <article class="course card">
+          <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?w=1200&auto=format&fit=crop&q=60" alt="Облачная инфраструктура">
+          <h3>MLOps основы</h3>
+          <p>MLflow, контейнеризация, развертывание, мониторинг дрейфа, алертинг и воспроизводимость.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ASSIGNMENTS -->
+    <section id="assignments" class="route" data-route="/assignments" aria-labelledby="assignments-title" hidden>
+      <h2 id="assignments-title">Задания</h2>
+      <ol class="assignments">
+        <li class="card">
+          <h3>Классификация клиентов</h3>
+          <p>Сформируйте пайплайн с обработкой пропусков, масштабированием и логистической регрессией. В отчёте объясните выбор метрики и интерпретацию коэффициентов.</p>
+        </li>
+        <li class="card">
+          <h3>Градиентный бустинг</h3>
+          <p>Сравните CatBoost и XGBoost на кросс-валидации. Подберите гиперпараметры, оцените важности признаков и устойчивость к шуму.</p>
+        </li>
+        <li class="card">
+          <h3>NLP: классификация текстов</h3>
+          <p>Соберите базовый пайплайн (tf-idf + линейная модель) и сравните с эмбеддингами. Подготовьте короткий обзор ошибок.</p>
+        </li>
+        <li class="card">
+          <h3>MLOps мини-проект</h3>
+          <p>Заверните модель в сервис, настройте трекинг экспериментов и мониторинг метрик. Опишите риски и план катастрофического отката.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- COURSEWORK -->
+    <section id="coursework" class="route" data-route="/coursework" aria-labelledby="coursework-title" hidden>
+      <h2 id="coursework-title">Курсовая работа</h2>
+      <p class="muted">На этой странице будут размещаться материалы курсового проекта: постановка задачи, EDA, прототип, метрики, экономический эффект, деплой и мониторинг.</p>
+      <div class="card">
+        <h3>Шаблон структуры</h3>
+        <ul class="checklist">
+          <li>Бизнес-формулировка и метрики успеха</li>
+          <li>Данные и EDA (качество, утечки, сплит)</li>
+          <li>Бейзлайн и итоговая модель</li>
+          <li>Валидация, стресс-тесты, интерпретация</li>
+          <li>Стек деплоя и мониторинг</li>
+          <li>Риски, стоимость, ROI</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="route" data-route="/about" aria-labelledby="about-title" hidden>
+      <h2 id="about-title">О школе Veselov ML School</h2>
+      <p>
+        Школа названа в честь автора курса — <strong>Veselov</strong>. Мы делаем ставку на системное мышление и инженерные
+        практики: чистая репликация экспериментов, строгая валидация и ориентация на продуктовый эффект. Присоединяйтесь,
+        если хотите прокачать практические навыки и портфолио.
+      </p>
+      <div class="contact card">
+        <h3>Связаться</h3>
+        <p>Email: <a href="mailto:hello@veselov-ml.school">hello@veselov-ml.school</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Veselov ML School. Все права защищены.</small>
+      <nav aria-label="Быстрые ссылки">
+        <a href="#/home">Главная</a>
+        <a href="#/courses">Курсы</a>
+        <a href="#/assignments">Задания</a>
+        <a href="#/coursework">Курсовая</a>
+      </nav>
     </div>
-  </section>
-
-  <section id="portfolio" class="portfolio">
-    <div class="container">
-      <h2>Портфолио</h2>
-      <div class="portfolio-grid">
-        
-        <div class="portfolio-item featured">
-          <h3>CSS-иллюстрация "Природный мир"</h3>
-          <!-- ===== КАРТИНКА ПО ТВОИМ СТИЛЯМ ===== -->
-          <div class="image">
-            <!-- боковые бордеры с «пупырками» -->
-            <div class="border border-up">
-              <!-- vertical dots -->
-              <div></div><div></div><div></div><div></div><div></div>
-              <div></div><div></div><div></div><div></div><div></div>
-            </div>
-            <div class="border border-left">
-              <!-- top dots -->
-              <div></div><div></div><div></div><div></div><div></div>
-              <div></div><div></div><div></div><div></div><div></div>
-            </div>
-            <div class="border border-down">
-              <!-- vertical dots -->
-              <div></div><div></div><div></div><div></div><div></div>
-              <div></div><div></div><div></div><div></div><div></div>
-            </div>
-            <div class="border border-right">
-              <!-- bottom dots -->
-              <div></div><div></div><div></div><div></div><div></div>
-              <div></div><div></div><div></div><div></div><div></div>
-            </div>
-
-            <!-- внутренний холст -->
-            <div class="center">
-              <div class="cloud cloud-1"></div>
-              <div class="cloud cloud-2"></div>
-
-              <!-- трава -->
-              <div class="triangles"></div>
-
-              <!-- грибы -->
-              <div class="mushroom"></div>
-              <div class="mushroom mushroom--tilted"></div>
-
-              <!-- пчела -->
-              <div class="image__butterfly">
-                <div class="wing wing-1"></div>
-                <div class="wing wing-2"></div>
-                <div class="wing wing-3"></div>
-                <div class="wing wing-4"></div>
-
-                <div class="head">
-                  <div class="eye"></div>
-                  <div class="eye"></div>
-                </div>
-                <div class="body"></div>
-              </div>
-            </div>
-          </div>
-          <!-- ===== /КАРТИНКА ===== -->
-          <p class="project-description">Полностью создано на HTML и CSS без использования изображений. Демонстрирует навыки работы с CSS-анимацией, градиентами и позиционированием.</p>
-          <div class="project-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">Animation</span>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <div class="project-placeholder">🌐</div>
-          <h3>Интернет-магазин</h3>
-          <p>Адаптивный интернет-магазин с корзиной товаров и интеграцией платежной системы.</p>
-          <div class="project-tags">
-            <span class="tag">React</span>
-            <span class="tag">Redux</span>
-            <span class="tag">API</span>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <div class="project-placeholder">📱</div>
-          <h3>Мобильное приложение</h3>
-          <p>PWA приложение для управления задачами с оффлайн режимом.</p>
-          <div class="project-tags">
-            <span class="tag">Vue.js</span>
-            <span class="tag">PWA</span>
-            <span class="tag">LocalStorage</span>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <div class="project-placeholder">🎨</div>
-          <h3>Дизайн-система</h3>
-          <p>Библиотека UI компонентов для корпоративного использования.</p>
-          <div class="project-tags">
-            <span class="tag">Storybook</span>
-            <span class="tag">SCSS</span>
-            <span class="tag">Components</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="container about-inner">
-      <h2>Обо мне</h2>
-      <div class="about-content">
-        <div class="about-photo">
-          <div class="photo-placeholder">📸</div>
-        </div>
-        <div class="about-text">
-          <p>Привет! Я Василий Веселов, frontend-разработчик с опытом создания современных веб-интерфейсов.</p>
-          <p>Специализируюсь на HTML, CSS, JavaScript и современных фреймворках. 
-             Увлекаюсь созданием интерактивных элементов и анимаций, которые делают пользовательский опыт незабываемым.</p>
-          <ul>
-            <li>🎓 Образование: Политехнический университет</li>
-            <li>💼 Опыт: 2+ года в веб-разработке</li>
-            <li>🚀 Специализация: Frontend, UI/UX</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="skills">
-    <div class="container">
-      <h2>Технические навыки</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Frontend</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Vue.js</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Инструменты</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">Webpack</span>
-            <span class="skill-tag">Sass</span>
-            <span class="skill-tag">Figma</span>
-            <span class="skill-tag">VS Code</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Дополнительно</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">API</span>
-            <span class="skill-tag">Responsive</span>
-            <span class="skill-tag">Animation</span>
-            <span class="skill-tag">Performance</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="container cta-inner">
-      <h2>Готовы к сотрудничеству?</h2>
-      <p>Давайте обсудим ваш проект и создадим что-то потрясающее вместе!</p>
-      <div class="cta-buttons">
-        <span class="btn btn-primary">Связаться со мной</span>
-        <span class="btn btn-secondary">Написать письмо</span>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contacts" class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h3>Василий Веселов</h3>
-        <p>Frontend-разработчик и веб-дизайнер</p>
-      </div>
-      <div>
-        <h3>Контакты</h3>
-        <p>Email: vasiliy.veselov@example.com</p>
-        <p>Телефон: +7 (900) 123-45-67</p>
-      </div>
-      <div>
-        <h3>Социальные сети</h3>
-        <p class="chips">
-          <span class="chip">GitHub</span>
-          <span class="chip">LinkedIn</span>
-          <span class="chip">Telegram</span>
-        </p>
-      </div>
-    </div>
-    <div class="container rights">© 2025 Василий Веселов. Все права защищены.</div>
   </footer>
 </body>
 </html>
