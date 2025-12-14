@@ -1,0 +1,56 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Автомобили — старт</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="common.js" defer></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('start-form');
+            const nameInput = document.getElementById('player-name');
+
+            // Если ранее уже кто-то играл — подставим имя
+            const lastPlayer = getCurrentPlayerName();
+            if (lastPlayer) {
+                nameInput.value = lastPlayer;
+            }
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = nameInput.value.trim();
+                if (!name) {
+                    alert('Введите имя!');
+                    return;
+                }
+                setCurrentPlayerName(name);
+                // Обнуляем временный прогресс игры
+                resetCurrentGameState();
+                window.location.href = 'game.html';
+            });
+        });
+    </script>
+</head>
+<body class="screen screen-start">
+    <div class="screen-container">
+        <h1 class="title">Игровое приложение «Автомобили»</h1>
+        <p class="subtitle">Мини-авторизация</p>
+
+        <form id="start-form" class="card card-start">
+            <label for="player-name">Введите ваше имя:</label>
+            <input id="player-name" type="text" maxlength="20" required>
+
+            <button type="submit" class="btn primary">Начать игру</button>
+
+            <button type="button" class="btn secondary" onclick="window.location.href='rating.html'">
+                Посмотреть рейтинг игроков
+            </button>
+        </form>
+
+        <div class="hint">
+            <p>После игры ваши результаты будут сохранены и попадут в общий рейтинг.</p>
+        </div>
+    </div>
+</body>
+</html>

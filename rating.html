@@ -1,0 +1,45 @@
+<!-- rating.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Автомобили — рейтинг</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="common.js" defer></script>
+    <script src="rating.js" defer></script>
+</head>
+<body class="screen screen-rating">
+    <div class="screen-container">
+        <h1 class="title">Рейтинг игроков</h1>
+
+        <section id="last-game" class="card">
+            <h2>Результат последней игры</h2>
+            <div id="last-game-content"></div>
+        </section>
+
+        <section id="rating-section" class="card">
+            <h2>Таблица лидеров</h2>
+            <table id="rating-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Игрок</th>
+                        <th>Лучший результат</th>
+                        <th>Последний результат</th>
+                        <th>Дата</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- динамическая таблица -->
+                </tbody>
+            </table>
+        </section>
+
+        <div class="buttons-row">
+            <button class="btn primary" onclick="window.location.href='index.html'">
+                Новая игра
+            </button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- game.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Автомобили — игра</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="common.js" defer></script>
+    <script src="game.js" defer></script>
+</head>
+<body class="screen screen-game">
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <span id="player-label"></span>
+            <span id="level-label"></span>
+            <span id="round-label"></span>
+        </div>
+        <div class="top-bar-right">
+            <span>Очки: <span id="score-label">0</span></span>
+            <span>Таймер: <span id="timer-label">0</span> c</span>
+            <button id="btn-end-level" class="btn warning small">Завершить уровень</button>
+            <button id="btn-exit" class="btn secondary small">Выйти в меню</button>
+        </div>
+    </header>
+
+    <main class="game-main">
+        <section id="instructions" class="card instructions">
+            <h2 id="level-title">Уровень 1</h2>
+            <p id="level-description"></p>
+            <p class="small">Используйте мышь и клавиатуру. Следите за временем!</p>
+        </section>
+
+        <section id="game-area" class="game-area">
+            <!-- Динамически создаваемые элементы уровней -->
+        </section>
+    </main>
+
+    <footer class="game-footer">
+        <button id="btn-next-level" class="btn primary" disabled>Перейти к следующему уровню</button>
+        <button id="btn-restart-level" class="btn secondary">Повторить уровень</button>
+    </footer>
+</body>
+</html>
