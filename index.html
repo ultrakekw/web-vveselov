@@ -10,24 +10,31 @@
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('start-form');
       const nameInput = document.getElementById('player-name');
+      const startLevelSelect = document.getElementById('start-level');
 
-      // Если ранее уже кто-то играл — подставим имя
       const lastPlayer = getCurrentPlayerName();
       if (lastPlayer) nameInput.value = lastPlayer;
 
-      form.addEventListener('submit', (e) => {
+      startLevelSelect.value = String(getStartLevel());
+
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
         const name = nameInput.value.trim();
         if (!name) {
-          alert('Введите имя!');
+          await showAlert('Введите имя!', 'Ошибка');
           return;
         }
+
+        const chosenLevel = Number(startLevelSelect.value) || 1;
+
         setCurrentPlayerName(name);
+        setStartLevel(chosenLevel);
         resetCurrentGameState();
+
         goTo('game.html');
       });
 
-      // Кнопка рейтинга (на всякий случай через JS тоже)
       const ratingBtn = document.getElementById('btn-rating');
       ratingBtn.addEventListener('click', () => goTo('rating.html'));
     });
@@ -41,6 +48,13 @@
     <form id="start-form" class="card card-start">
       <label for="player-name">Введите ваше имя:</label>
       <input id="player-name" type="text" maxlength="20" required>
+
+      <label for="start-level">Стартовый уровень (для тестирования):</label>
+      <select id="start-level" class="select">
+        <option value="1">Уровень 1</option>
+        <option value="2">Уровень 2</option>
+        <option value="3">Уровень 3</option>
+      </select>
 
       <button type="submit" class="btn primary">Начать игру</button>
 

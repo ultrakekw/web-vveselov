@@ -15,7 +15,16 @@
       <span id="level-label"></span>
       <span id="round-label"></span>
     </div>
+
     <div class="top-bar-right">
+      <!-- ✅ Новое: быстрый переход по уровням для тестирования -->
+      <label class="topbar-label" for="level-jump">Уровень:</label>
+      <select id="level-jump" class="select select-topbar" title="Быстрый переход между уровнями (для тестирования)">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+
       <span>Очки: <span id="score-label">0</span></span>
       <span>Таймер: <span id="timer-label">0</span> c</span>
       <button id="btn-end-level" class="btn warning small">Завершить уровень</button>
