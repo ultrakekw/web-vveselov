@@ -3,28 +3,33 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <base href="./">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Автомобили — игра</title>
+
   <link rel="stylesheet" href="styles.css">
   <script src="common.js" defer></script>
   <script src="game.js" defer></script>
 </head>
+
 <body class="screen screen-game">
   <header class="top-bar">
     <div class="top-bar-left">
       <span id="player-label"></span>
       <span id="level-label"></span>
       <span id="round-label"></span>
+
+      <label class="lvl-jump">
+        <span class="small">Прыжок:</span>
+        <select id="level-jump">
+          <option value="1">L1</option>
+          <option value="2">L2</option>
+          <option value="3">L3</option>
+        </select>
+      </label>
     </div>
 
     <div class="top-bar-right">
-      <!-- ✅ Новое: быстрый переход по уровням для тестирования -->
-      <label class="topbar-label" for="level-jump">Уровень:</label>
-      <select id="level-jump" class="select select-topbar" title="Быстрый переход между уровнями (для тестирования)">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-
       <span>Очки: <span id="score-label">0</span></span>
       <span>Таймер: <span id="timer-label">0</span> c</span>
       <button id="btn-end-level" class="btn warning small">Завершить уровень</button>
@@ -39,9 +44,7 @@
       <p class="small">Используйте мышь и клавиатуру. Следите за временем!</p>
     </section>
 
-    <section id="game-area" class="game-area">
-      <!-- Динамически создаваемые элементы уровней -->
-    </section>
+    <section id="game-area" class="game-area"></section>
   </main>
 
   <footer class="game-footer">

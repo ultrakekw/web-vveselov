@@ -437,3 +437,77 @@ body.modal-open {
   justify-content: flex-end;
   gap: 10px;
 }
+
+/* ===== GitHub Pages / UI fixes ===== */
+
+/* селекты под тёмную тему */
+select {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+select option {
+  color: #111;
+}
+
+/* top-bar может не влезать по ширине на небольших экранах */
+.top-bar {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
+.lvl-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===== Модальные окна (замена alert/confirm) ===== */
+
+#modal-root {
+  position: relative;
+  z-index: 9999;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.modal {
+  width: min(520px, 100%);
+  background: rgba(10, 10, 10, 0.95);
+  border-radius: 14px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.75);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.modal h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.modal-body {
+  white-space: pre-wrap;
+  font-size: 14px;
+  opacity: 0.95;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
