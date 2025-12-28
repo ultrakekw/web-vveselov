@@ -174,6 +174,7 @@ function tuneLayoutForLevel(level) {
 
 function startLevel() {
   cancelAnimation();
+  stopLevel3Audio();
   clearInterval(timerInterval);
   timerInterval = null;
 
@@ -235,7 +236,7 @@ function startLevel() {
     titleEl.textContent = 'Уровень 3 — Один круг по трассе + препятствия';
     // ✅ короче, чтобы меньше занимало места
     descEl.textContent =
-      'Проедьте 1 круг как можно быстрее. Управление: мышь (перетаскивание) или стрелки. Препятствия исчезают по таймеру.';
+      'Проедьте 1 круг как можно быстрее. Управление: мышь (перетаскивание) или стрелки. Препятствия исчезают по таймеру. 🔊 Звук включится после первого клика/клавиши.';
     setupLevel3();
   }
 
@@ -290,6 +291,151 @@ function cancelAnimation() {
     animationFrameId = null;
   }
 }
+
+// ======================================================
+// ====================== AUDIO (L3) ====================
+// ======================================================
+// Звуковое сопровождение для 3 уровня сделано через WebAudio API,
+// без внешних файлов — так оно одинаково работает и локально, и на GitHub Pages.
+// ⚠️ В большинстве браузеров звук можно запустить только после действия пользователя
+// (клик/нажатие клавиши). Поэтому мы делаем «разблокировку» при первом взаимодействии.
+
+let audioCtx = null;
+let level3Audio = {
+  playing: false,
+  master: null,
+  engineOsc: null,
+  engineGain: null,
+  engineFilter: null,
+  beatTimer: null,
+};
+
+function ensureAudioContext() {
+  if (audioCtx && audioCtx.state !== 'closed') return audioCtx;
+  const Ctx = window.AudioContext || window.webkitAudioContext;
+  if (!Ctx) return null;
+  audioCtx = new Ctx();
+  return audioCtx;
+}
+
+function startLevel3Audio() {
+  const ctx = ensureAudioContext();
+  if (!ctx) return;
+  if (level3Audio.playing) {
+    // на всякий случай пытаемся «разбудить» контекст
+    void ctx.resume?.();
+    return;
+  }
+
+  const master = ctx.createGain();
+  master.gain.value = 0.12; // общая громкость
+  master.connect(ctx.destination);
+
+  // «двигатель» — низкий пилообразный тон через low-pass фильтр
+  const engineOsc = ctx.createOscillator();
+  engineOsc.type = 'sawtooth';
+  engineOsc.frequency.value = 90;
+
+  const engineGain = ctx.createGain();
+  engineGain.gain.value = 0.35;
+
+  const engineFilter = ctx.createBiquadFilter();
+  engineFilter.type = 'lowpass';
+  engineFilter.frequency.value = 420;
+  engineFilter.Q.value = 0.7;
+
+  engineOsc.connect(engineGain);
+  engineGain.connect(engineFilter);
+  engineFilter.connect(master);
+  engineOsc.start();
+
+  // лёгкий «бит» раз в ~0.6 сек (поддержка ощущения темпа)
+  const beatTimer = window.setInterval(() => {
+    if (!audioCtx || audioCtx.state === 'closed') return;
+    const t = ctx.currentTime + 0.01;
+
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = 'triangle';
+    o.frequency.setValueAtTime(440, t);
+
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.18, t + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.09);
+
+    o.connect(g);
+    g.connect(master);
+
+    o.start(t);
+    o.stop(t + 0.10);
+  }, 600);
+
+  level3Audio.playing = true;
+  level3Audio.master = master;
+  level3Audio.engineOsc = engineOsc;
+  level3Audio.engineGain = engineGain;
+  level3Audio.engineFilter = engineFilter;
+  level3Audio.beatTimer = beatTimer;
+
+  // попытка «разбудить» контекст (если был suspended)
+  void ctx.resume?.();
+}
+
+function updateLevel3Audio(dt) {
+  if (!level3Audio.playing || !audioCtx || audioCtx.state === 'closed') return;
+  // Подстраиваем звук под скорость/движение машины, чтобы было живее.
+  // Скорость оцениваем грубо: по изменению позиции за кадр.
+  const car = levelState?.car;
+  if (!car) return;
+
+  // запоминаем прошлую позицию прямо в объекте машины (не мешает логике)
+  const prevX = car.__prevX ?? car.x;
+  const prevY = car.__prevY ?? car.y;
+  const dx = car.x - prevX;
+  const dy = car.y - prevY;
+  car.__prevX = car.x;
+  car.__prevY = car.y;
+
+  const v = Math.sqrt(dx * dx + dy * dy) / Math.max(0.016, dt); // px/s
+  const speedNorm = Math.min(1, v / 600); // нормализация
+
+  const baseFreq = 80;
+  const freq = baseFreq + speedNorm * 180;
+  const filterF = 280 + speedNorm * 900;
+  const vol = 0.20 + speedNorm * 0.25;
+
+  // плавные изменения (без щелчков)
+  const t = audioCtx.currentTime;
+  try {
+    level3Audio.engineOsc.frequency.setTargetAtTime(freq, t, 0.03);
+    level3Audio.engineFilter.frequency.setTargetAtTime(filterF, t, 0.03);
+    level3Audio.engineGain.gain.setTargetAtTime(vol, t, 0.03);
+  } catch (e) {
+    // ignore
+  }
+}
+
+function stopLevel3Audio() {
+  if (!level3Audio.playing) return;
+
+  if (level3Audio.beatTimer) {
+    window.clearInterval(level3Audio.beatTimer);
+    level3Audio.beatTimer = null;
+  }
+
+  try { level3Audio.engineOsc?.stop(); } catch (e) {}
+  try { level3Audio.engineOsc?.disconnect(); } catch (e) {}
+  try { level3Audio.engineGain?.disconnect(); } catch (e) {}
+  try { level3Audio.engineFilter?.disconnect(); } catch (e) {}
+  try { level3Audio.master?.disconnect(); } catch (e) {}
+
+  level3Audio.playing = false;
+  level3Audio.master = null;
+  level3Audio.engineOsc = null;
+  level3Audio.engineGain = null;
+  level3Audio.engineFilter = null;
+}
+
 
 // ======================================================
 // ====================== УРОВЕНЬ 1 ======================
@@ -884,6 +1030,26 @@ function setupLevel3() {
 
   gameArea.appendChild(canvas);
 
+  // 🔊 L3 звук: пробуем включить сразу (если вход на уровень был по клику),
+  // а если браузер заблокировал автозапуск — включим при первом действии пользователя.
+  let l3AudioUnlocked = false;
+  const unlockL3Audio = () => {
+    if (l3AudioUnlocked) return;
+    l3AudioUnlocked = true;
+    startLevel3Audio();
+    canvas.removeEventListener('mousedown', unlockL3Audio);
+    canvas.removeEventListener('touchstart', unlockL3Audio);
+    document.removeEventListener('keydown', unlockL3Audio);
+  };
+
+  // попытка автозапуска
+  try { unlockL3Audio(); } catch (e) {}
+
+  // fallback: первый клик/тап по полю или любая клавиша
+  canvas.addEventListener('mousedown', unlockL3Audio);
+  canvas.addEventListener('touchstart', unlockL3Audio, { passive: true });
+  document.addEventListener('keydown', unlockL3Audio, { once: true });
+
   // --- Размеры canvas так, чтобы влезало на 15" ---
   const headerH = document.querySelector('.top-bar')?.getBoundingClientRect().height || 0;
   const instructionsH = document.getElementById('instructions')?.getBoundingClientRect().height || 0;
@@ -950,6 +1116,9 @@ function setupLevel3() {
 
   requestAnimation((dt) => {
     if (levelState.finished) return;
+
+    // 🔊 обновляем звук под текущую скорость/движение
+    updateLevel3Audio(dt);
 
     levelState.time += dt;
 
@@ -1244,6 +1413,7 @@ function applyKeyboardMoveLevel3(dt) {
 async function finishRoundLevel3() {
   levelState.finished = true;
   cancelAnimation();
+  stopLevel3Audio();
 
   const t = levelState.time;
   let gained = Math.round(LEVEL3_BASE_SCORE - t * 12);
@@ -1262,6 +1432,7 @@ async function failRoundLevel3(reasonText) {
 
   levelState.finished = true;
   cancelAnimation();
+  stopLevel3Audio();
 
   addScore(LEVEL3_FAIL_PENALTY);
   await showAlert(
@@ -1438,6 +1609,7 @@ function nextRoundOrFinish() {
 
 async function finishLevel(completed, earlyExit = false, reason = '') {
   cancelAnimation();
+  stopLevel3Audio();
   clearInterval(timerInterval);
   timerInterval = null;
 
