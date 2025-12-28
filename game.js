@@ -328,7 +328,7 @@ function startLevel3Audio() {
   }
 
   const master = ctx.createGain();
-  master.gain.value = 0.12; // общая громкость
+  master.gain.value = 0.32; // общая громкость
   master.connect(ctx.destination);
 
   // «двигатель» — низкий пилообразный тон через low-pass фильтр
@@ -558,7 +558,7 @@ function setupLevel1() {
   const hint = document.createElement('p');
   hint.className = 'small';
   hint.style.marginTop = '10px';
-  hint.innerHTML = 'Выберите вариант кнопкой или цифрой <b>1..5</b>. Затем нажмите <b>Начать заезд</b>.';
+  hint.innerHTML = 'Выберите вариант кнопкой или цифрой <b>1..5</b>. Затем сделайте <b>двойной клик</b> по кнопке <b>Начать заезд (стрелки)</b>.';
   controlsCard.appendChild(hint);
 
   // кнопка старта заезда
@@ -567,14 +567,14 @@ function setupLevel1() {
   startBtn.className = 'btn primary';
   startBtn.textContent = 'Начать заезд (стрелки)';
   startBtn.style.marginTop = '10px';
-  startBtn.addEventListener('click', () => beginDriveLevel1());
+  startBtn.addEventListener('dblclick', () => beginDriveLevel1());
   controlsCard.appendChild(startBtn);
 
   // блок статуса заезда
   const driveInfo = document.createElement('div');
   driveInfo.className = 'small';
   driveInfo.style.marginTop = '10px';
-  driveInfo.textContent = 'Шаг 2 появится после старта заезда.';
+  driveInfo.textContent = 'Шаг 2 появится после двойного клика по кнопке «Начать заезд (стрелки)».';
   controlsCard.appendChild(driveInfo);
 
   gameArea.appendChild(controlsCard);
